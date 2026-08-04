@@ -1,0 +1,47 @@
+[[IgnoredVulns]]
+id = "GHSA-2mjp-6q6p-2qxm"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-35p6-xmwp-9g52"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-4992-7rv2-5pvq"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-8xcm-r25x-g524"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-g8m3-5g58-fq7m"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-g9mf-h72j-4rw9"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-m8rv-5g2x-5cg5"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-p88m-4jfj-68fv"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-v3r7-h72x-cjcm"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-v9p9-hfj2-hcw8"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-vrm6-8vpv-qv8q"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
+
+[[IgnoredVulns]]
+id = "GHSA-vxpw-j846-p89q"
+reason = "undici vuln only reachable via @actions/artifact's unused download/delete/list/get-artifact code paths; upload path uses patched undici@6.28.0"
