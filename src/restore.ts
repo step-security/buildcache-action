@@ -64,9 +64,8 @@ export async function downloadLatest(accessToken: string): Promise<string> {
     throw new Error('Unable to determine release URL for buildcache')
   }
   core.info(`buildcache: installing from ${buildCacheReleaseUrl}`)
-  const buildcacheReleasePath = await toolcache.downloadTool(
-    buildCacheReleaseUrl
-  )
+  const buildcacheReleasePath =
+    await toolcache.downloadTool(buildCacheReleaseUrl)
   core.info(`buildcache: download path ${buildcacheReleasePath}`)
   return buildcacheReleasePath
 }
