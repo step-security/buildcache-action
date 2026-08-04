@@ -1,0 +1,31 @@
+name: 'build-test'
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build: # make sure build/ci work properly
+    env:
+      GITHUB_TOKEN: '${{ github.token }}'
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          corepack enable
+      - run: |
+          yarn
+      - run: |
+          yarn all
+  test: # make sure the action works on a clean machine without building
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-22.04"]') || fromJSON('["ubuntu-22.04", "macos-latest", "windows-latest"]') }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./
+        with:
+          cache_key: build-test-${{ matrix.os }}
+

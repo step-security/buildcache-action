@@ -1,0 +1,66 @@
+{
+  "name": "buildcache-action",
+  "version": "2.1.0",
+  "description": "GitHub Action that installs and configures buildcache to accelerate compilation",
+  "main": "dist/restore/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build-watch": "tsc-watch --onSuccess \"yarn package\"",
+    "clean": "yarn rimraf __tests__/runner ./dist ./lib ./demo",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package-file": "ncc build --target es2020 --source-map --license licenses.txt -o",
+    "package-restore": "yarn package-file dist/restore src/restore.ts",
+    "package-save": "yarn package-file dist/save src/save.ts",
+    "package": "yarn package-restore && yarn package-save",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "all": "yarn build && yarn format-check && yarn lint && yarn package && yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-security/buildcache-action.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "build",
+    "compile",
+    "cache",
+    "buildcache"
+  ],
+  "author": "step-security",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/artifact": "^1.1.1",
+    "@actions/cache": "^3.2.1",
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.1.1",
+    "@actions/io": "^1.1.1",
+    "@actions/tool-cache": "^2.0.1",
+    "axios": "^1.19.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
+    "@types/rimraf": "^3.0.2",
+    "@typescript-eslint/parser": "^4.32.0",
+    "@vercel/ncc": "^0.44.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-github": "^4.3.0",
+    "eslint-plugin-jest": "^24.5.0",
+    "jest": "^27.2.4",
+    "jest-circus": "^27.2.4",
+    "prettier": "2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "tsc-watch": "^4.5.0",
+    "typescript": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "yarn@4.18.0+sha512.fcb8716fe7cd0eece141ffc18b92193a9df9204c1ba83189c288835223fc0bbe64af473bab0d5e9927a7daeb5caf2bb07eb2787cc9338ca040ea125f2a1f2f7e"
+}
