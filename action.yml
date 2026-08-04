@@ -1,0 +1,40 @@
+name: 'buildcache-action'
+description: 'GitHub Action that installs and configures buildcache to accelerate compilation'
+author: 'step-security'
+inputs:
+  cache_key:
+    description: 'An additional string to use in the cache key'
+    required: false
+  key:
+    description: 'deprecated: synonym for `cache_key`, use cache_key. Will be removed in v2'
+    required: false
+  save_cache:
+    description: 'Set to false not to save the cache at the end of the job'
+    required: false
+  access_token:
+    required: false
+    description: 'Your GitHub Access Token to fetch buildcache latest build, defaults to: {{ github.token }}'
+    default: '${{ github.token }}'
+  install_dir:
+    required: false
+    description: 'Where to install buildcache, GITHUB_WORKSPACE by default. Will be exported on PATH'
+    default: '${{ github.workspace }}'
+  upload_buildcache_log:
+    required: false
+    default: false
+    description: 'If set to true, any buildcache log create during the run will be uploaded as an artifact'
+  zero_buildcache_stats:
+    required: false
+    default: true
+    description: 'Defaults to true, will print stats on restore, then zero them for run-specific stats on save'
+  buildcache_tag:
+    required: false
+    default: "latest"
+    description: "Explicitly provide the tag for the release of buildcache to be used. ie. `v0.27.7`"
+runs:
+  using: 'node24'
+  main: 'dist/restore/index.js'
+  post: 'dist/save/index.js'
+branding:
+  icon: 'archive'
+  color: 'gray-dark'
