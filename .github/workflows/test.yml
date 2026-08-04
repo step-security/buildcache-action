@@ -11,7 +11,12 @@ jobs:
       GITHUB_TOKEN: '${{ github.token }}'
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v7
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
           corepack enable
       - run: |
@@ -24,7 +29,12 @@ jobs:
       matrix:
         os: ${{ github.actor == 'dependabot[bot]' && fromJSON('["ubuntu-22.04"]') || fromJSON('["ubuntu-22.04", "macos-latest", "windows-latest"]') }}
     steps:
-      - uses: actions/checkout@v7
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: ./
         with:
           cache_key: build-test-${{ matrix.os }}
