@@ -1587,10 +1587,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^16.10.2":
+"@types/node@npm:*":
   version: 16.10.2
   resolution: "@types/node@npm:16.10.2"
   checksum: 10c0/bb2d7a22bd2c0862de6f07511b4dc5e516acedea0983211066be5a630e02632b77bb1ed2105afe4af12d0ff74ebbcc05b9901397e91887d5a887be8d35ac7905
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^26.1.2":
+  version: 26.1.2
+  resolution: "@types/node@npm:26.1.2"
+  dependencies:
+    undici-types: "npm:~8.3.0"
+  checksum: 10c0/a45503222c7db8f374afd5c9381db63dd95b6b1f703abea0890dd3d4a09eeb41da489e08a1a45baf18fe89fb77fbf310ff2789f680c490b04dafc41a60800a86
   languageName: node
   linkType: hard
 
@@ -2504,7 +2513,7 @@ __metadata:
     "@actions/io": "npm:^2.0.0"
     "@actions/tool-cache": "npm:^3.0.1"
     "@types/jest": "npm:^29.5.14"
-    "@types/node": "npm:^16.10.2"
+    "@types/node": "npm:^26.1.2"
     "@types/rimraf": "npm:^3.0.2"
     "@typescript-eslint/parser": "npm:^7.18.0"
     "@vercel/ncc": "npm:^0.44.1"
@@ -7011,6 +7020,13 @@ __metadata:
     has-symbols: "npm:^1.1.0"
     which-boxed-primitive: "npm:^1.1.1"
   checksum: 10c0/7dbd35ab02b0e05fe07136c72cb9355091242455473ec15057c11430129bab38b7b3624019b8778d02a881c13de44d63cd02d122ee782fb519e1de7775b5b982
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~8.3.0":
+  version: 8.3.0
+  resolution: "undici-types@npm:8.3.0"
+  checksum: 10c0/c8aa7e2fbebfce519654dafadc0ece59be888d2ccaf180fb4495da875e7b536d2456345c384069c7e6f3e9c9ab7435f074957da306f142343eee86ff8048855a
   languageName: node
   linkType: hard
 
