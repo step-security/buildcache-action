@@ -39,7 +39,7 @@
     "@actions/exec": "^2.0.0",
     "@actions/github": "^8.0.1",
     "@actions/io": "^2.0.0",
-    "@actions/tool-cache": "^3.0.1",
+    "@actions/tool-cache": "^4.0.0",
     "axios": "^1.19.0"
   },
   "devDependencies": {
